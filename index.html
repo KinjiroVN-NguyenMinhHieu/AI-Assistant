@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f8fb"><title>AI-Assistant</title>
+  <style>
+    :root{font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#182535;background:#f6f8fb;font-synthesis:none;text-rendering:optimizeLegibility;font-optical-sizing:auto}*{box-sizing:border-box}body{margin:0;min-height:100vh}button,textarea{font:inherit}.layout{max-width:1440px;margin:auto;min-height:100vh;display:grid;grid-template-columns:264px 1fr;background:white;box-shadow:0 0 50px #12294b0a}.sidebar{background:#f7f9fc;border-right:1px solid #e7ebf0;padding:26px 18px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:12px;padding:0 8px 26px}.logo{display:grid;place-items:center;width:39px;height:39px;background:#286c59;color:white;border-radius:12px;font-size:20px}.brand h1{margin:0;font-size:15px;letter-spacing:-.3px}.brand p{margin:3px 0 0;color:#8a96a5;font-size:11px}.new-chat{width:100%;padding:11px 12px;background:white;border:1px solid #e3e8ed;border-radius:9px;color:#344557;text-align:left;cursor:pointer;font-size:13px;font-weight:600}.new-chat:hover{border-color:#8ab4a4}.side-label{margin:26px 9px 11px;color:#9aa5b2;text-transform:uppercase;font-size:10px;font-weight:700;letter-spacing:1.1px}.quick{width:100%;border:0;background:transparent;color:#536274;padding:9px 10px;border-radius:7px;text-align:left;cursor:pointer;font-size:12px;line-height:1.5}.quick:hover{background:#ecf1f4;color:#286c59}.sidebar-footer{margin-top:auto;border-top:1px solid #e7ebf0;padding:16px 4px 0;color:#8793a1;font-size:11px;line-height:1.7}.status{display:flex;align-items:center;gap:8px;color:#556476;font-size:11px;margin-bottom:10px}.dot{width:7px;height:7px;border-radius:50%;background:#dfa347}.main{display:flex;min-width:0;flex-direction:column;height:100vh}.topbar{height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 30px;border-bottom:1px solid #edf0f3;color:#556476;font-size:12px}.crumb{display:flex;align-items:center;gap:8px}.crumb strong{color:#243448;font-size:13px}.pill{border:1px solid #e7ebef;border-radius:20px;padding:6px 10px;color:#788594;font-size:10px}.content{width:min(780px,calc(100% - 40px));margin:0 auto;flex:1;min-height:0;display:flex;flex-direction:column}.welcome{margin:auto 0 20px;padding:0 0 0}.welcome-icon{width:47px;height:47px;border-radius:15px;display:grid;place-items:center;color:#286c59;background:#e8f2ee;font-size:22px}.welcome h2{font-size:26px;letter-spacing:-.7px;margin:20px 0 8px;font-weight:650}.welcome>p{color:#768394;font-size:14px;line-height:1.75;margin:0 0 24px;max-width:600px}.cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{padding:13px 14px;border:1px solid #e8edf0;border-radius:10px;color:#4d5e6d;background:#fff;cursor:pointer;text-align:left;font-size:12px;line-height:1.55}.card:hover{border-color:#93b6a9;box-shadow:0 4px 15px #286c590c}.card b{display:block;color:#293a49;margin-bottom:4px;font-weight:600;font-size:12px}.messages{flex:1;overflow:auto;padding:28px 0 18px;display:flex;flex-direction:column;gap:20px}.msg{display:flex;gap:11px;align-items:flex-start}.msg.user{justify-content:flex-end}.avatar{flex:0 0 28px;width:28px;height:28px;border-radius:9px;background:#e8f2ee;display:grid;place-items:center;color:#286c59;font-size:13px}.bubble{max-width:min(640px,88%);padding:12px 15px;border:1px solid #ebeff2;border-radius:4px 12px 12px 12px;color:#374656;font-size:13px;line-height:1.75;white-space:pre-wrap;overflow-wrap:anywhere}.user .bubble{background:#286c59;border-color:#286c59;border-radius:12px 4px 12px 12px;color:white}.typing{color:#82909e;font-size:12px;padding:8px 0}.composer-wrap{padding:10px 0 20px}.composer{border:1px solid #dfe6e9;border-radius:13px;padding:12px 13px 9px;box-shadow:0 5px 20px #183a5608;background:white}.composer:focus-within{border-color:#85aa9d;box-shadow:0 0 0 3px #286c5910}.composer textarea{width:100%;resize:none;border:0;outline:0;min-height:48px;max-height:150px;color:#243448;font-size:13px;line-height:1.6}.composer textarea::placeholder{color:#a0aab5}.composer-bottom{display:flex;justify-content:space-between;align-items:center;color:#97a1ac;font-size:10px}.send{border:0;border-radius:8px;background:#286c59;color:white;padding:8px 13px;cursor:pointer;font-size:11px;font-weight:600}.send:disabled{opacity:.5;cursor:default}.footnote{text-align:center;font-size:10px;color:#9aa4af;padding-top:8px}.error{color:#a14536}.hidden{display:none!important}@media(max-width:760px){.layout{grid-template-columns:1fr}.sidebar{display:none}.main{height:100dvh}.topbar{height:55px;padding:0 16px}.content{width:calc(100% - 32px)}.welcome h2{font-size:23px}.cards{grid-template-columns:1fr}.welcome{margin:auto 0 16px}.messages{padding-top:20px}.pill{font-size:9px}}
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand"><div class="logo">AI</div><div><h1>AI-Assistant</h1><p>HR &amp; Attendance</p></div></div>
+      <button class="new-chat" id="newChat">＋ &nbsp; Cuộc trò chuyện mới</button>
+      <div class="side-label">Gợi ý câu hỏi</div>
+      <button class="quick" data-prompt="残業禁止の従業員について、確認に必要な情報を教えてください。">残業禁止の確認方法</button>
+      <button class="quick" data-prompt="Tôi muốn kiểm tra giờ làm thêm của nhân viên trong tháng này. Cần những dữ liệu nào?">Kiểm tra giờ làm thêm</button>
+      <button class="quick" data-prompt="What data do I need to check an employee's attendance restrictions?">Attendance restrictions</button>
+      <div class="sidebar-footer"><div class="status"><span class="dot"></span><span id="connectionText">Đang kiểm tra cấu hình…</span></div>Trợ lý hỗ trợ phân tích nhân sự.<br>Dữ liệu chấm công cần được kết nối riêng.</div>
+    </aside>
+    <main class="main">
+      <header class="topbar"><div class="crumb"><span>Trợ lý nhân sự</span><span>›</span><strong>Hội thoại mới</strong></div><span class="pill">Hỗ trợ · 日本語 / VI / EN</span></header>
+      <section class="content">
+        <aside class="setup-notice" id="setupNotice" role="status"><strong>Setup notice</strong>HR database is not connected; internal employee records cannot be verified. Add the database adapter in <code>knowledge.mjs</code>. Web search is optional and requires a Tavily API key.</aside>
+        <div class="welcome" id="welcome">
+          <div class="welcome-icon">✳</div><h2>Xin chào, tôi có thể giúp gì?</h2>
+          <p>Trao đổi về lịch làm việc, giờ làm thêm và quy định nhân sự. Trợ lý sẽ trả lời bằng tiếng Nhật, tiếng Việt hoặc tiếng Anh theo ngôn ngữ bạn sử dụng.</p>
+          <div class="cards">
+            <button class="card" data-prompt="残業禁止の対象者について確認したいです。必要なデータと確認手順を教えてください。"><b>Kiểm tra hạn chế làm thêm</b>Thông tin cần có để đối chiếu quy định 残業禁止</button>
+            <button class="card" data-prompt="Tôi cần đối chiếu lịch làm việc với dữ liệu chấm công thực tế. Hãy hướng dẫn tôi chuẩn bị dữ liệu."><b>Đối chiếu lịch và chấm công</b>Chuẩn bị dữ liệu lịch làm việc và giờ thực tế</button>
+            <button class="card" data-prompt="What information is needed to review an employee's overtime and attendance restrictions?"><b>Chuẩn bị thông tin nhân viên</b>Danh sách trường dữ liệu cần thiết để rà soát</button>
+            <button class="card" data-prompt="勤次郎の実績データがない場合、残業制限をどう確認すればよいですか？"><b>Hỏi về quy trình HR</b>Nhận hướng dẫn và phân tích dựa trên dữ liệu bạn cung cấp</button>
+          </div>
+        </div>
+        <div class="messages hidden" id="messages" aria-live="polite"></div>
+        <div class="composer-wrap">
+          <form class="composer" id="chatForm"><textarea id="prompt" rows="2" placeholder="C&#7913; h&#7887;i t&#7921; nhi&#234;n; v&#237; d&#7909;: ki&#7875;m tra gi&#7901; l&#224;m th&#234;m th&#225;ng n&#224;y..." aria-label="Tin nhắn"></textarea><div class="composer-bottom"><span>Enter để gửi · Shift + Enter để xuống dòng</span><button class="send" id="send" type="submit">Gửi&nbsp; ↑</button></div></form>
+          <div class="footnote">AI có thể mắc lỗi. Vui lòng xác minh quyết định nhân sự với dữ liệu hệ thống.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script>
+    const $ = id => document.getElementById(id), messages = [], welcome = $('welcome'), list = $('messages'), promptBox = $('prompt'), sendButton = $('send'), setupNotice = $('setupNotice');
+    let busy = false;
+    function addMessage(role, text, error = false) {
+      const row = document.createElement('div'); row.className = `msg ${role}`;
+      if (role === 'assistant') { const avatar = document.createElement('div'); avatar.className = 'avatar'; avatar.textContent = '勤'; row.append(avatar); }
+      const bubble = document.createElement('div'); bubble.className = `bubble${error ? ' error' : ''}`; bubble.textContent = text; row.append(bubble); list.append(row); list.scrollTop = list.scrollHeight;
+    }
+    async function submit(text) {
+      if (busy || !text.trim()) return;
+      busy = true; sendButton.disabled = true; welcome.classList.add('hidden'); list.classList.remove('hidden');
+      const clean = text.trim(); promptBox.value = ''; promptBox.style.height = 'auto'; addMessage('user', clean); messages.push({ role: 'user', content: clean });
+      const typing = document.createElement('div'); typing.className = 'typing'; typing.textContent = 'Đang soạn phản hồi…'; list.append(typing); list.scrollTop = list.scrollHeight;
+      try {
+        const response = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages }) });
+        const data = await response.json(); typing.remove();
+        if (!response.ok) { messages.pop(); addMessage('assistant', data.error || 'Đã xảy ra lỗi.', true); }
+        else { messages.push({ role: 'assistant', content: data.answer }); addMessage('assistant', data.answer); }
+      } catch { typing.remove(); messages.pop(); addMessage('assistant', 'Không thể kết nối máy chủ. Hãy kiểm tra ứng dụng đang chạy và thử lại.', true); }
+      finally { busy = false; sendButton.disabled = false; promptBox.focus(); }
+    }
+    $('chatForm').addEventListener('submit', event => { event.preventDefault(); submit(promptBox.value); });
+    promptBox.addEventListener('keydown', event => { if (event.key === 'Enter' && !event.shiftKey) { event.preventDefault(); submit(promptBox.value); } });
+    promptBox.addEventListener('input', () => { promptBox.style.height = 'auto'; promptBox.style.height = `${Math.min(promptBox.scrollHeight, 150)}px`; });
+    document.querySelectorAll('[data-prompt]').forEach(button => button.addEventListener('click', () => { if (messages.length) { promptBox.value = button.dataset.prompt; promptBox.focus(); } else submit(button.dataset.prompt); }));
+    $('newChat').addEventListener('click', () => { messages.length = 0; list.replaceChildren(); list.classList.add('hidden'); welcome.classList.remove('hidden'); promptBox.value = ''; });
+    fetch('/api/status').then(r => r.json()).then(status => {
+      const notices = [];
+      if (!status.knowledgeBaseConnected) notices.push('HR database is not connected; employee records cannot be verified. Add your database in knowledge.mjs.');
+      notices.push(status.webSearchReady ? 'Web search is enabled.' : 'Web search is not configured; add TAVILY_API_KEY to .env to enable it.');
+      setupNotice.textContent = 'Setup notice: ' + notices.join(' ');
+      connectionText.textContent = status.provider === 'groq' ? (status.ready ? 'Groq configured' : 'Groq API key missing') : (status.ready ? (status.fallbackReady ? 'Gemini / Groq fallback ready' : 'Gemini configured') : (status.fallbackReady ? 'Groq backup configured' : 'AI API key missing'));
+    }).catch(() => { connectionText.textContent = 'Server is unreachable'; });
+  </script>
+</body>
+</html>
